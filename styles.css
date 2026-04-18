@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* ===== Profile Card Styles ===== */
+article[data-testid="test-profile-card"] {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+article[data-testid="test-profile-card"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Avatar Section ===== */
+figure[data-testid="test-user-avatar-figure"] {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+img[data-testid="test-user-avatar"] {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #667eea;
+}
+
+figcaption {
+    font-size: 0.75rem;
+    color: #999;
+    text-align: center;
+}
+
+/* ===== Profile Info Section ===== */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+header {
+    margin: 0;
+}
+
+h1[data-testid="test-user-name"] {
+    font-size: 1.75rem;
+    color: #1a1a1a;
+    margin: 0;
+    word-break: break-word;
+}
+
+p[data-testid="test-user-bio"] {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===== Time Display ===== */
+[data-testid="test-user-time"] {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #999;
+    font-family: 'Courier New', monospace;
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border-left: 3px solid #667eea;
+}
+
+/* ===== Social Links ===== */
+.social-nav {
+    margin: 8px 0;
+}
+
+ul[data-testid="test-user-social-links"] {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+a[data-testid^="test-user-social-"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    background-color: #667eea;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+a[data-testid^="test-user-social-"]:hover {
+    background-color: #5568d3;
+    transform: translateY(-2px);
+}
+
+a[data-testid^="test-user-social-"]:focus-visible {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+a[data-testid^="test-user-social-"]:active {
+    transform: translateY(0);
+}
+
+/* ===== Interests Sections ===== */
+.interests-section {
+    margin-top: 16px;
+}
+
+.interests-section h2 {
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    margin: 0 0 12px 0;
+}
+
+ul[data-testid="test-user-hobbies"],
+ul[data-testid="test-user-dislikes"] {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+ul[data-testid="test-user-hobbies"] li,
+ul[data-testid="test-user-dislikes"] li {
+    font-size: 0.9rem;
+    color: #555;
+    padding: 6px 0;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    article[data-testid="test-profile-card"] {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    figure[data-testid="test-user-avatar-figure"] {
+        margin: 0 auto;
+    }
+
+    .profile-info {
+        align-items: center;
+    }
+
+    header, p[data-testid="test-user-bio"], [data-testid="test-user-time"], .social-nav {
+        text-align: center;
+    }
+
+    ul[data-testid="test-user-social-links"] {
+        justify-content: center;
+    }
+
+    .interests-section {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    ul[data-testid="test-user-hobbies"],
+    ul[data-testid="test-user-dislikes"] {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    article[data-testid="test-profile-card"] {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    h1[data-testid="test-user-name"] {
+        font-size: 1.4rem;
+    }
+
+    p[data-testid="test-user-bio"] {
+        font-size: 0.85rem;
+    }
+
+    img[data-testid="test-user-avatar"] {
+        width: 100px;
+        height: 100px;
+    }
+
+    a[data-testid^="test-user-social-"] {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    ul[data-testid="test-user-social-links"] {
+        gap: 6px;
+    }
+
+    .interests-section h2 {
+        font-size: 1rem;
+    }
+
+    ul[data-testid="test-user-hobbies"] li,
+    ul[data-testid="test-user-dislikes"] li {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 320px) {
+    article[data-testid="test-profile-card"] {
+        padding: 12px;
+    }
+
+    h1[data-testid="test-user-name"] {
+        font-size: 1.2rem;
+    }
+
+    p[data-testid="test-user-bio"] {
+        font-size: 0.8rem;
+    }
+
+    img[data-testid="test-user-avatar"] {
+        width: 80px;
+        height: 80px;
+    }
+
+    a[data-testid^="test-user-social-"] {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+
+    [data-testid="test-user-time"] {
+        font-size: 0.75rem;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}

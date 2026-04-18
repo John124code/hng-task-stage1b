@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card - HNG Frontend Wizards Stage 1b</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <article data-testid="test-profile-card" role="region" aria-label="User profile card">
+
+            <!-- Avatar Section -->
+            <figure data-testid="test-user-avatar-figure" class="avatar-figure">
+                <img
+                    data-testid="test-user-avatar"
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop"
+                    alt="Jane Doe, Frontend Developer"
+                    loading="lazy"
+                >
+                <figcaption>Profile Photo</figcaption>
+            </figure>
+
+            <!-- Profile Information Section -->
+            <div class="profile-info">
+                <!-- Name -->
+                <header>
+                    <h1 data-testid="test-user-name">Jane Doe</h1>
+                </header>
+
+                <!-- Bio -->
+                <p data-testid="test-user-bio">
+                    Frontend developer passionate about accessible web design and creating beautiful, responsive user experiences. Always learning and exploring new technologies.
+                </p>
+
+                <!-- Current Time -->
+                <div data-testid="test-user-time" class="time-display" aria-live="polite" aria-atomic="true" role="status">
+                    1713474000000
+                </div>
+
+                <!-- Social Links -->
+                <nav aria-label="Social media links" class="social-nav">
+                    <ul data-testid="test-user-social-links" role="list" class="social-links">
+                        <li>
+                            <a
+                                data-testid="test-user-social-twitter"
+                                href="https://twitter.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Visit profile on Twitter (opens in new tab)"
+                            >
+                                𝕏 Twitter
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                data-testid="test-user-social-github"
+                                href="https://github.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Visit profile on GitHub (opens in new tab)"
+                            >
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                data-testid="test-user-social-linkedin"
+                                href="https://linkedin.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Visit profile on LinkedIn (opens in new tab)"
+                            >
+                                LinkedIn
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Hobbies Section -->
+                <section class="interests-section">
+                    <h2>Hobbies</h2>
+                    <ul data-testid="test-user-hobbies" role="list" class="hobbies-list">
+                        <li>🎨 Web Design</li>
+                        <li>📸 Photography</li>
+                        <li>🎮 Gaming</li>
+                        <li>🌍 Traveling</li>
+                    </ul>
+                </section>
+
+                <!-- Dislikes Section -->
+                <section class="interests-section">
+                    <h2>Dislikes</h2>
+                    <ul data-testid="test-user-dislikes" role="list" class="dislikes-list">
+                        <li>❌ Inaccessible websites</li>
+                        <li>❌ Poor UX design</li>
+                        <li>❌ Spam emails</li>
+                        <li>❌ Slow loading times</li>
+                    </ul>
+                </section>
+            </div>
+        </article>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
